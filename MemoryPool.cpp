@@ -89,7 +89,7 @@ void* MemoryPool::Alloc(int bytes)
 		char* ptr = block->mPad + (block->first*(alignedByte+2));
 		block->first = *((USHORT*)ptr);
 		--block->free;
-		return (ptr);
+		return ptr+2; //// 计算错误
 	}
 	else
 	{
