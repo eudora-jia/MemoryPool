@@ -1,6 +1,6 @@
 #include "MemoryBlock.h"
 
-MemoryBlock::MemoryBlock(USHORT initblock, USHORT unitSize)
+MemoryBlock::MemoryBlock(const int  initblock, const int unitSize)
 	:prev(nullptr),
 	next(nullptr),
 	mSize(initblock* (unitSize+2)),
@@ -18,7 +18,7 @@ MemoryBlock::MemoryBlock(USHORT initblock, USHORT unitSize)
 	}
 }
 
-void* MemoryBlock::operator new(size_t, USHORT initBlock, USHORT unitSize)
+void* MemoryBlock::operator new(size_t, const int initBlock, const int unitSize)
 {
 	return ::operator new(sizeof(MemoryBlock) + initBlock* (unitSize+2));
 }

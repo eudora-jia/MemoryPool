@@ -15,8 +15,8 @@ struct MemoryBlock
 	int first;
 	//Padding
 	char mPad[2];
-	MemoryBlock(USHORT=1, USHORT = 0);
-	static void* operator new(size_t, USHORT, USHORT);
+	MemoryBlock(const int =1, const int  = 0);
+	static void* operator new(size_t, const int , const int);
 	static void operator delete(void*);
 };
 
