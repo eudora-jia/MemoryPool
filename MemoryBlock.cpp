@@ -7,7 +7,9 @@ MemoryBlock::MemoryBlock(USHORT initblock, USHORT unitSize)
 	free(initblock - 1),
 	first(1)
 {
-	memset(mPad, 0, mSize - 20);
+//    memset(mPad, 0, mSize - 20);
+    /// 有两个字节的内存没有使用
+    memset(mPad, 0, mSize+2);
 	char* padData = mPad;
 	for (int i = 1; i< initblock;i++)
 	{
